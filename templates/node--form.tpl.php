@@ -4,7 +4,7 @@
 method="post">
 	<div id="WFIcenter" class="wf-body">
 	
-	<!--field form-->
+	<!-- field form -->
 		<div class="field">
 			<?php if($node->field_show_form_header['und']['0']['value']==1):?>
 			<div class="form-header">=> <?phpif(!empty($node->field_form_header) print $node->field_form_header['und'][0]['value']; ?> <=</div>
