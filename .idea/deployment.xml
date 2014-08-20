@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="PublishConfigData" serverName="Server" uploadOnCheckin="a8ad09e6-eb45-4337-9b3e-229f4773ecc0">
+    <serverData>
+      <paths name="Server">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/squeezepage.diemdulich.com.vn/public_html/sites/all/themes/Squeezepage" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
     <option name="myUploadOnCheckinName" value="Server" />
   </component>
 </project>
