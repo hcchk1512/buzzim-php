@@ -7,7 +7,7 @@ method="post">
 	<!-- field form -->
 		<div class="field">
 			<?php if($node->field_show_form_header['und']['0']['value']==1):?>
-			<div class="form-header">=> <?phpif(!empty($node->field_form_header) print $node->field_form_header['und'][0]['value']; ?> <=</div>
+			<div class="form-header">=> <?php print $node->field_form_header['und'][0]['value']; ?> <=</div>
 			<?php endif; ?>
 			<?php if($node->field_show_form_label['und']['0']['value']==1):?><label class="field-label">Name</label><?php endif; ?>
 			<input class="field-name" type="text" name="name" placeholder="<?php print $node->field_name_preset_text['und'][0]['value']; ?>">
