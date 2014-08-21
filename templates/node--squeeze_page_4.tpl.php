@@ -1,34 +1,36 @@
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-	<header>
-		<?php 
-		// Header text or image
-		if($node->field_header_type['und']['0']['value']==0):
-			print '<h1 class="header">' . $node->field_header_text['und'][0]['value'] . '</h1>';
-		elseif($node->field_header_type['und']['0']['value']==1):
-			print '<div class="header-background">'. '<img src="'. $node->field_header_image_url['und'][0]['value'].'"/>' . '</div>';
-		endif;
-		?>
-	</header>
 	<div class="row-fluid">
-	<div class="span8"><img src="<?php print base_path( )?><?php print path_to_theme() ?><?php print $node->field_form_background_image_url['und'][0]['value']; ?>"/></div>
-		<div class="span4 <?php print $node->field_form_style['und'][0]['value']; ?>">
+        <div class="span7 left-content">
+            <header>
+                <?php
+                // Header text or image
+                if($node->field_header_type['und']['0']['value']==0):
+                    print '<h2 class="header">' . $node->field_header_text['und'][0]['value'] . '</h2>';
+                elseif($node->field_header_type['und']['0']['value']==1):
+                    print '<div class="header-background">'. '<img src="'. $node->field_header_image_url['und'][0]['value'].'"/>' . '</div>';
+                endif;
+                ?>
+            </header>
+            <img class="body-image" src="<?php print base_path( )?><?php print path_to_theme() ?><?php print $node->field_form_background_image_url['und'][0]['value']; ?>"/>
+        </div>
+		<div class="span5 <?php print $node->field_form_style['und'][0]['value']; ?>">
 			<form id="webform" accept-charset="utf-8" action="https://app.getresponse.com/add_contact_webform.html?u=Z5Ft"
 			method="post">
 				<div id="WFIcenter" class="wf-body">
 				
 				<!--field form-->
-					<div class="field">
-						<?php if($node->field_show_form_header['und']['0']['value']==1):?>
-						<div class="form-header">=> <?php print $node->field_form_header['und'][0]['value']; ?> <=</div>
-						<?php endif; ?>
+                    <?php if($node->field_show_form_header['und']['0']['value']==1):?>
+                        <div class="form-header">=> <?php print $node->field_form_header['und'][0]['value']; ?> <=</div>
+                    <?php endif; ?>
+                    <div class="field">
 						<?php if($node->field_show_form_label['und']['0']['value']==1):?><label class="field-label">Name</label><?php endif; ?>
 						<input class="field-name" type="text" name="name" placeholder="<?php print $node->field_name_preset_text['und'][0]['value']; ?>">
 						<br>
 						<?php if($node->field_show_form_label['und']['0']['value']==1):?><label class="field-label">Email</label><?php endif; ?>
 						<input class="field-email" type="text" name="email" placeholder="<?php print $node->field_email_preset_text['und'][0]['value']; ?>">
-					</div>
-					<input type="submit" class="btn btn-large btn-primary" id="submit" name="submit" value="<?php print $node->field_submit_text['und'][0]['value']; ?>"></input>
+                        <input type="submit" class="btn btn-large btn-primary" id="submit" name="submit" value="<?php print $node->field_submit_text['und'][0]['value']; ?>"></input>
+                    </div>
 					<?php if($node->field_show_form_footer['und']['0']['value']==1):?>
 					<div class="form-footer-text">
 						<?php print $node->field_form_footer['und'][0]['value']; ?>
